@@ -27,5 +27,20 @@ namespace App_Papema
             Form_Ver_Usuarios form = new Form_Ver_Usuarios();
             form.ShowDialog();
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puntoDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

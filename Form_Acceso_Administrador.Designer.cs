@@ -37,6 +37,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +51,10 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem,
+            this.categoriasToolStripMenuItem,
+            this.proveedoresToolStripMenuItem,
+            this.puntoDeVentaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(2, 2);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1898, 36);
@@ -117,9 +123,33 @@
             // 
             this.verUsuariosToolStripMenuItem.Image = global::App_Papema.Properties.Resources.Usuario;
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Image = global::App_Papema.Properties.Resources.Compras_Articulo;
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Image = global::App_Papema.Properties.Resources.Icono_clientes;
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(163, 32);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            // 
+            // puntoDeVentaToolStripMenuItem
+            // 
+            this.puntoDeVentaToolStripMenuItem.Image = global::App_Papema.Properties.Resources.compras;
+            this.puntoDeVentaToolStripMenuItem.Name = "puntoDeVentaToolStripMenuItem";
+            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
+            this.puntoDeVentaToolStripMenuItem.Text = "Punto de Venta";
+            this.puntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.puntoDeVentaToolStripMenuItem_Click);
             // 
             // Form_Acceso_Administrador
             // 
@@ -160,5 +190,8 @@
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem puntoDeVentaToolStripMenuItem;
     }
 }

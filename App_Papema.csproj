@@ -62,6 +62,12 @@
     <Compile Include="Form_Acceso_Administrador.Designer.cs">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Categorias.Designer.cs">
+      <DependentUpon>Form_Categorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Eliminar_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="Form_Modificar_Usuario.Designer.cs">
       <DependentUpon>Form_Modificar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Proveedores.Designer.cs">
+      <DependentUpon>Form_Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_RegistrarUsuario.cs">
       <SubType>Form</SubType>
@@ -100,11 +112,17 @@
     <EmbeddedResource Include="Form_Acceso_Administrador.resx">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Categorias.resx">
+      <DependentUpon>Form_Categorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Eliminar_Usuario.resx">
       <DependentUpon>Form_Eliminar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Modificar_Usuario.resx">
       <DependentUpon>Form_Modificar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Proveedores.resx">
+      <DependentUpon>Form_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_RegistrarUsuario.resx">
       <DependentUpon>Form_RegistrarUsuario.cs</DependentUpon>
@@ -140,6 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="i.ico" />
+    <None Include="Resources\compras.png" />
+    <None Include="Resources\Icono-clientes.png" />
+    <None Include="Resources\PROVEEDOR.png" />
+    <None Include="Resources\Compras_Articulo.png" />
     <None Include="Resources\Usuario.png" />
     <None Include="Resources\inventario.png" />
     <None Include="Resources\Logo_Papema.png" />
