@@ -14,3 +14,5 @@ D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Ver_Usuarios.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Eliminar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Modificar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Acerca.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Categorias.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Proveedores.resources

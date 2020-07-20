@@ -106,6 +106,7 @@
             this.textBox_buscar.Name = "textBox_buscar";
             this.textBox_buscar.Size = new System.Drawing.Size(320, 46);
             this.textBox_buscar.TabIndex = 20;
+            this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox_buscar_TextChanged);
             // 
             // grid_Proveedores
             // 
@@ -145,6 +146,7 @@
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Proveedores";
+            this.Load += new System.EventHandler(this.Form_Proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_Proveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

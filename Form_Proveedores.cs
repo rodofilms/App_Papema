@@ -17,12 +17,24 @@ namespace App_Papema
             InitializeComponent();
         }
 
+        private ConexionSQL conn = new ConexionSQL();
+
         private void button_modificar_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button_eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_Proveedores_Load(object sender, EventArgs e)
+        {
+            grid_Proveedores.DataSource = conn.ver_proveedores("");
+        }
+
+        private void textBox_buscar_TextChanged(object sender, EventArgs e)
         {
 
         }

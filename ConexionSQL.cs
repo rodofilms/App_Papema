@@ -275,5 +275,35 @@ namespace App_Papema
 
             return aux;
         }
+
+        public object ver_proveedores(string buscar)
+        {
+            DataSet ds = new DataSet();
+            DataView dv = new DataView();
+            SqlDataAdapter da;
+
+            try
+            {
+                this.conexion.Open();
+                // cadena con select para mostrar los registros
+                string cadenaSQL = "select * from Provedores";
+                da = new SqlDataAdapter(cadenaSQL, this.conexion);
+                da.Fill(ds);
+                dv = new DataView();
+                dv.Table = ds.Tables[0];
+                //esta linea facilitara la busqueda de los datos
+                dv.RowFilter = "Nombre LIKE '%" + buscar + "%'";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR en la conexion: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return dv;
+        }
     }
 }
