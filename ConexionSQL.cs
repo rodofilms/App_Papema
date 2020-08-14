@@ -84,6 +84,21 @@ namespace App_Papema
             try
             {
                 this.conexion.Open();
+
+                SqlCommand comando = new SqlCommand("AgregarUsuarios", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@User", usuario);
+                comando.Parameters.AddWithValue("@Pass", pass);
+                comando.Parameters.AddWithValue("@Tip", nivel);
+                comando.Parameters.AddWithValue("@Name", nombre);
+                comando.Parameters.AddWithValue("@Ape", apellido);
+
+                comando.Parameters.Add("@salida", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+
+                /*
+                this.conexion.Open();
                 string cadena = "insert into Usuarios(Usuario,Password,Tipo_Acceso,Nombre,Apellido) " +
                     "values (@usuario,@pass,@nivel,@nombre,@ape)";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
@@ -100,20 +115,23 @@ namespace App_Papema
                 comando.Parameters["@nombre"].Value = nombre;
                 comando.Parameters["@ape"].Value = apellido;
                 //ejecutamos todas las instrucciones sql
-
-                if (comando.ExecuteNonQuery() != 0)
+                */
+               
+                if (comando.ExecuteNonQuery() != 0 && comando.Parameters["@Salida"].Value.ToString().Equals("1"))
                 {
                     b = 1;
                     Console.WriteLine("Los datos se guardaron correctamente");
                 }
-                else
+                else if (comando.Parameters["@Salida"].Value.ToString().Equals("0"))
                 {
-                    Console.WriteLine("Los datos no se guardaron");
+                    b = 2;
+                    Console.WriteLine("El usuario no se puede repetir");
                 }
+             
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ha ocurrido un error con el login: " + ex.Message);
+                Console.WriteLine("Ha ocurrido un error al agregar datos: " + ex.Message);
             }
             finally
             {

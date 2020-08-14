@@ -32,26 +32,33 @@ namespace App_Papema
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                //Todo es correcto, guardamos los datos
+                int aux = 0;
+                //si todo es correcto, guardamos los datos
                 ConexionSQL conn = new ConexionSQL();
                 //vaciar el contenido del formulario en variables
                 try
                 {
                     string nivel = comboBox_TipoAcceso.SelectedItem.ToString();
+                    //ejecutar metodo para agregar datos
+                    aux = conn.agregar_usuario(textBox_Usuario.Text, textBox_Password.Text, nivel, textBox_Nombre.Text, textBox_Apellido.Text);
 
-                    if (conn.agregar_usuario(textBox_Usuario.Text, textBox_Password.Text, nivel, textBox_Nombre.Text, textBox_Apellido.Text) == 1)
+                    if (aux == 1)
                     {
                         MessageBox.Show("EL Usuario se agrego correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
+                    else if (aux == 2)
+                    {
+                        MessageBox.Show("El Usuario no se puede repetir", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                     else
                     {
-                        MessageBox.Show("Ha Ocurrido un error", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ha Ocurrido un error", "Peligro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Verifique todos los campos", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Verifique todos los campos", "Peligro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
