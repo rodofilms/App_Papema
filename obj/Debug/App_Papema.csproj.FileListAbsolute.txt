@@ -8,11 +8,14 @@ D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.csproj.CoreCompileInputs.cache
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.exe
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.pdb
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Index.resources
-D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_RegistrarUsuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Acceso_Administrador.resources
-D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Ver_Usuarios.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Eliminar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Modificar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Acerca.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Categorias.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Proveedores.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Registrar_Proveedor.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Registrar_Usuario.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Usuarios.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Proveedores.Form_Eliminar_Proveedor.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Proveedores.Form_Modificar_Proveedor.resources

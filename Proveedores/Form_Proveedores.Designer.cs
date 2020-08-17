@@ -1,6 +1,6 @@
 ﻿namespace App_Papema
 {
-    partial class Form_Categorias
+    partial class Form_Proveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Categorias));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Proveedores));
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.button_eliminar = new System.Windows.Forms.Button();
             this.button_modificar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
-            this.grid_Categorias = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_Categorias)).BeginInit();
+            this.grid_Proveedores = new System.Windows.Forms.DataGridView();
+            this.button_agregar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Proveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -73,6 +74,7 @@
             this.button_eliminar.TabIndex = 23;
             this.button_eliminar.Text = "Eliminar";
             this.button_eliminar.UseVisualStyleBackColor = false;
+            this.button_eliminar.Click += new System.EventHandler(this.button_eliminar_Click);
             // 
             // button_modificar
             // 
@@ -85,6 +87,7 @@
             this.button_modificar.TabIndex = 22;
             this.button_modificar.Text = "Modificar";
             this.button_modificar.UseVisualStyleBackColor = false;
+            this.button_modificar.Click += new System.EventHandler(this.button_modificar_Click);
             // 
             // label1
             // 
@@ -104,46 +107,63 @@
             this.textBox_buscar.Name = "textBox_buscar";
             this.textBox_buscar.Size = new System.Drawing.Size(320, 46);
             this.textBox_buscar.TabIndex = 20;
+            this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox_buscar_TextChanged);
             // 
-            // grid_Categorias
+            // grid_Proveedores
             // 
-            this.grid_Categorias.AllowUserToAddRows = false;
-            this.grid_Categorias.AllowUserToDeleteRows = false;
+            this.grid_Proveedores.AllowUserToAddRows = false;
+            this.grid_Proveedores.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            this.grid_Categorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grid_Categorias.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.grid_Categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Categorias.Location = new System.Drawing.Point(32, 101);
-            this.grid_Categorias.Name = "grid_Categorias";
-            this.grid_Categorias.ReadOnly = true;
-            this.grid_Categorias.RowHeadersWidth = 51;
+            this.grid_Proveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid_Proveedores.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.grid_Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_Proveedores.Location = new System.Drawing.Point(32, 101);
+            this.grid_Proveedores.Name = "grid_Proveedores";
+            this.grid_Proveedores.ReadOnly = true;
+            this.grid_Proveedores.RowHeadersWidth = 51;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            this.grid_Categorias.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.grid_Categorias.RowTemplate.Height = 24;
-            this.grid_Categorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_Categorias.Size = new System.Drawing.Size(1085, 366);
-            this.grid_Categorias.TabIndex = 19;
+            this.grid_Proveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.grid_Proveedores.RowTemplate.Height = 24;
+            this.grid_Proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grid_Proveedores.Size = new System.Drawing.Size(1085, 366);
+            this.grid_Proveedores.TabIndex = 19;
+            this.grid_Proveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_Proveedores_CellClick);
             // 
-            // Form_Categorias
+            // button_agregar
+            // 
+            this.button_agregar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_agregar.ForeColor = System.Drawing.Color.Black;
+            this.button_agregar.Location = new System.Drawing.Point(929, 26);
+            this.button_agregar.Name = "button_agregar";
+            this.button_agregar.Size = new System.Drawing.Size(188, 59);
+            this.button_agregar.TabIndex = 26;
+            this.button_agregar.Text = "Agregar";
+            this.button_agregar.UseVisualStyleBackColor = false;
+            this.button_agregar.Click += new System.EventHandler(this.button_agregar_Click);
+            // 
+            // Form_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1141, 594);
+            this.Controls.Add(this.button_agregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_ID);
             this.Controls.Add(this.button_eliminar);
             this.Controls.Add(this.button_modificar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_buscar);
-            this.Controls.Add(this.grid_Categorias);
+            this.Controls.Add(this.grid_Proveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_Categorias";
+            this.Name = "Form_Proveedores";
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_Categorias";
-            ((System.ComponentModel.ISupportInitialize)(this.grid_Categorias)).EndInit();
+            this.Text = "Form_Proveedores";
+            this.Load += new System.EventHandler(this.Form_Proveedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Proveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +177,7 @@
         private System.Windows.Forms.Button button_modificar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_buscar;
-        private System.Windows.Forms.DataGridView grid_Categorias;
+        private System.Windows.Forms.DataGridView grid_Proveedores;
+        private System.Windows.Forms.Button button_agregar;
     }
 }

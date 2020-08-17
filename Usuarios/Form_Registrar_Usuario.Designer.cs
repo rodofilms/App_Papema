@@ -1,6 +1,6 @@
 ﻿namespace App_Papema
 {
-    partial class Form_RegistrarUsuario
+    partial class Form_Registrar_Usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RegistrarUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Registrar_Usuario));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverAIniciarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox_Usuario = new System.Windows.Forms.TextBox();

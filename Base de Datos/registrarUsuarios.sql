@@ -1,4 +1,4 @@
-create procedure AgregarUsuarios
+create procedure sp_agregar_usuarios
 (
     @User nvarchar(30),
 	@Pass nvarchar(20),

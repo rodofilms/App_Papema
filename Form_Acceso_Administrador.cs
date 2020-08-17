@@ -24,7 +24,7 @@ namespace App_Papema
 
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Ver_Usuarios form = new Form_Ver_Usuarios();
+            Form_Usuarios form = new Form_Usuarios();
             form.ShowDialog();
         }
 

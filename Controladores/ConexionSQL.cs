@@ -85,7 +85,7 @@ namespace App_Papema
             {
                 this.conexion.Open();
 
-                SqlCommand comando = new SqlCommand("AgregarUsuarios", conexion);
+                SqlCommand comando = new SqlCommand("sp_agregar_usuarios", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@User", usuario);
@@ -117,12 +117,12 @@ namespace App_Papema
                 //ejecutamos todas las instrucciones sql
                 */
                
-                if (comando.ExecuteNonQuery() != 0 && comando.Parameters["@Salida"].Value.ToString().Equals("1"))
+                if (comando.ExecuteNonQuery() != 0 && comando.Parameters["@salida"].Value.ToString().Equals("1"))
                 {
                     b = 1;
                     Console.WriteLine("Los datos se guardaron correctamente");
                 }
-                else if (comando.Parameters["@Salida"].Value.ToString().Equals("0"))
+                else if (comando.Parameters["@salida"].Value.ToString().Equals("0"))
                 {
                     b = 2;
                     Console.WriteLine("El usuario no se puede repetir");
@@ -217,7 +217,7 @@ namespace App_Papema
                     "Tipo_Acceso = @nivel, " +
                     "Nombre = @nombre, " +
                     "Apellido = @ape " +
-                    "where ID_usuario = @codigo";
+                    "where ID_Usuario = @codigo";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 //definimos el tipo de dato para cada parametro 
                 comando.Parameters.Add("@usuario", SqlDbType.NVarChar);
@@ -322,6 +322,160 @@ namespace App_Papema
             }
 
             return dv;
+        }
+
+        public int agregar_proveedor(string nombre,string agencia,string telefono,string correo)
+        {
+            int b = 0;
+            try
+            {
+                this.conexion.Open();
+
+                SqlCommand comando = new SqlCommand("sp_agregar_proveedor", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@name", nombre);
+                comando.Parameters.AddWithValue("@agencia", agencia);
+                comando.Parameters.AddWithValue("@tel", telefono);
+                comando.Parameters.AddWithValue("@email", correo);
+
+                comando.Parameters.Add("@salida", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+
+                if (comando.ExecuteNonQuery() != 0 && comando.Parameters["@salida"].Value.ToString().Equals("1"))
+                {
+                    b = 1;
+                    Console.WriteLine("Los datos se guardaron correctamente");
+                }
+                else if (comando.Parameters["@salida"].Value.ToString().Equals("0"))
+                {
+                    b = 2;
+                    Console.WriteLine("El Proveedor no se puede repetir");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error al agregar datos: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return b;
+        }
+
+        public int borrar_proveedor(int id)
+        {
+            int aux = 0;
+            try
+            {
+                this.conexion.Open();
+                string cadena = "delete from Provedores where ID_provedores = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+                comando.Parameters.Add("@codigo", SqlDbType.Int);
+                comando.Parameters["@codigo"].Value = id;
+
+                if (comando.ExecuteNonQuery() == 1)
+                {
+                    aux = 1;
+                }
+                else
+                {
+                    Console.WriteLine("No se ha podido eliminar el registro");
+                    aux = 0;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error al ejecutar las sentecias SQL en el metodo borrar_proveedor");
+            }
+            finally
+            {
+                this.conexion.Close();
+                Console.WriteLine("Se cerro la conexion");
+            }
+
+            return aux;
+        }
+
+        public string mostrar_proveedor(int id)
+        {
+            string aux = "";
+            try
+            {
+                this.conexion.Open();
+                string cadena = "select * from Provedores where ID_provedores = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+
+                //definimos el tipo de dato para cada parametro 
+                comando.Parameters.Add("@codigo", SqlDbType.Int);
+                comando.Parameters["@codigo"].Value = id;
+
+                //vaciar el registro en un objeto para poder verlos
+                SqlDataReader registro = comando.ExecuteReader();
+                while (registro.Read())
+                {
+                    aux = registro["Nombre"].ToString() + "," +
+                    registro["Agencia"].ToString() + "," +
+                    registro["Telefono"].ToString() + "," +
+                    registro["Correo"].ToString();
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error al mostrar los datos: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return aux;
+        }
+
+        public int modificar_proveedor(string nombre,string agencia,string telefono,string correo,int id) 
+        {
+            int b = 0;
+            try
+            {
+                this.conexion.Open();
+                string cadena = "update Provedores set " +
+                    "Nombre = @nombre, " +
+                    "Agencia = @agencia, " +
+                    "Telefono = @telefono, " +
+                    "Correo = @correo " +
+                    "where ID_provedores = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@agencia", agencia);
+                comando.Parameters.AddWithValue("@telefono", telefono);
+                comando.Parameters.AddWithValue("@correo", correo);
+                comando.Parameters.AddWithValue("@codigo", id);
+
+                if (comando.ExecuteNonQuery() != 0)
+                {
+                    b = 1;
+                    Console.WriteLine("Los datos se guardaron correctamente");
+                }
+                else
+                {
+                    Console.WriteLine("Los datos no se guardaron");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error con el Update: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return b;
         }
     }
 }

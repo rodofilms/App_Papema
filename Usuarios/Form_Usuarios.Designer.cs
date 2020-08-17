@@ -1,6 +1,6 @@
 ﻿namespace App_Papema
 {
-    partial class Form_Ver_Usuarios
+    partial class Form_Usuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Ver_Usuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Usuarios));
             this.grid_Usuarios = new System.Windows.Forms.DataGridView();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();

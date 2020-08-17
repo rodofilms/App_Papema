@@ -55,48 +55,66 @@
     <Compile Include="Acerca.Designer.cs">
       <DependentUpon>Acerca.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConexionSQL.cs" />
+    <Compile Include="Controladores\ConexionSQL.cs" />
     <Compile Include="Form_Acceso_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Acceso_Administrador.Designer.cs">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Categorias.cs">
+    <Compile Include="Categorias\Form_Categorias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Categorias.Designer.cs">
+    <Compile Include="Categorias\Form_Categorias.Designer.cs">
       <DependentUpon>Form_Categorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Eliminar_Usuario.cs">
+    <Compile Include="Proveedores\Form_Eliminar_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Eliminar_Usuario.Designer.cs">
+    <Compile Include="Proveedores\Form_Eliminar_Proveedor.Designer.cs">
+      <DependentUpon>Form_Eliminar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\Form_Modificar_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\Form_Modificar_Proveedor.Designer.cs">
+      <DependentUpon>Form_Modificar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Form_Eliminar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Form_Eliminar_Usuario.Designer.cs">
       <DependentUpon>Form_Eliminar_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Modificar_Usuario.cs">
+    <Compile Include="Usuarios\Form_Modificar_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Modificar_Usuario.Designer.cs">
+    <Compile Include="Usuarios\Form_Modificar_Usuario.Designer.cs">
       <DependentUpon>Form_Modificar_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Proveedores.cs">
+    <Compile Include="Proveedores\Form_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Proveedores.Designer.cs">
+    <Compile Include="Proveedores\Form_Proveedores.Designer.cs">
       <DependentUpon>Form_Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_RegistrarUsuario.cs">
+    <Compile Include="Usuarios\Form_Registrar_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_RegistrarUsuario.Designer.cs">
-      <DependentUpon>Form_RegistrarUsuario.cs</DependentUpon>
+    <Compile Include="Usuarios\Form_Registrar_Usuario.Designer.cs">
+      <DependentUpon>Form_Registrar_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Ver_Usuarios.cs">
+    <Compile Include="Proveedores\Form_Registrar_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Ver_Usuarios.Designer.cs">
-      <DependentUpon>Form_Ver_Usuarios.cs</DependentUpon>
+    <Compile Include="Proveedores\Form_Registrar_Proveedor.Designer.cs">
+      <DependentUpon>Form_Registrar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Form_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Form_Usuarios.Designer.cs">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
@@ -112,23 +130,32 @@
     <EmbeddedResource Include="Form_Acceso_Administrador.resx">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Categorias.resx">
+    <EmbeddedResource Include="Categorias\Form_Categorias.resx">
       <DependentUpon>Form_Categorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Eliminar_Usuario.resx">
+    <EmbeddedResource Include="Proveedores\Form_Eliminar_Proveedor.resx">
+      <DependentUpon>Form_Eliminar_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\Form_Modificar_Proveedor.resx">
+      <DependentUpon>Form_Modificar_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Form_Eliminar_Usuario.resx">
       <DependentUpon>Form_Eliminar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Modificar_Usuario.resx">
+    <EmbeddedResource Include="Usuarios\Form_Modificar_Usuario.resx">
       <DependentUpon>Form_Modificar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Proveedores.resx">
+    <EmbeddedResource Include="Proveedores\Form_Proveedores.resx">
       <DependentUpon>Form_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_RegistrarUsuario.resx">
-      <DependentUpon>Form_RegistrarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Proveedores\Form_Registrar_Proveedor.resx">
+      <DependentUpon>Form_Registrar_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Ver_Usuarios.resx">
-      <DependentUpon>Form_Ver_Usuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Form_Registrar_Usuario.resx">
+      <DependentUpon>Form_Registrar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Form_Usuarios.resx">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
@@ -167,6 +194,9 @@
     <None Include="Resources\Logo_Papema.png" />
     <None Include="Resources\Admin.png" />
     <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Punto de Venta\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

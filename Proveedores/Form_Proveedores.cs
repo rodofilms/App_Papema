@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Proveedores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace App_Papema
 {
-    public partial class Form_Ver_Usuarios : Form
+    public partial class Form_Proveedores : Form
     {
-        public Form_Ver_Usuarios()
+        public Form_Proveedores()
         {
             InitializeComponent();
         }
@@ -21,39 +22,46 @@ namespace App_Papema
 
         private void button_modificar_Click(object sender, EventArgs e)
         {
-            Form_Modificar_Usuario form = new Form_Modificar_Usuario(textBox_ID.Text);
+            Form_Modificar_Proveedor form = new Form_Modificar_Proveedor(textBox_ID.Text);
             form.ShowDialog();
             textBox_ID.Text = "";
             button_modificar.Enabled = false;
             button_eliminar.Enabled = false;
-            Form_Ver_Usuarios_Load(null, null);
+            Form_Proveedores_Load(null, null);
         }
 
         private void button_eliminar_Click(object sender, EventArgs e)
         {
-            Form_Eliminar_Usuario form = new Form_Eliminar_Usuario(textBox_ID.Text);
+            Form_Eliminar_Proveedor form = new Form_Eliminar_Proveedor(textBox_ID.Text);
             form.ShowDialog();
             textBox_ID.Text = "";
             button_eliminar.Enabled = false;
             button_modificar.Enabled = false;
-            Form_Ver_Usuarios_Load(null, null);
+            Form_Proveedores_Load(null, null);
         }
 
-        private void Form_Ver_Usuarios_Load(object sender, EventArgs e)
+        private void Form_Proveedores_Load(object sender, EventArgs e)
         {
-            grid_Usuarios.DataSource = conn.ver_usuarios("");
+            grid_Proveedores.DataSource = conn.ver_proveedores("");
         }
 
         private void textBox_buscar_TextChanged(object sender, EventArgs e)
         {
-            grid_Usuarios.DataSource = conn.ver_usuarios(textBox_buscar.Text);
+            grid_Proveedores.DataSource = conn.ver_proveedores(textBox_buscar.Text);
         }
 
-        private void grid_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void button_agregar_Click(object sender, EventArgs e)
+        {
+            Form_Registrar_Proveedor form = new Form_Registrar_Proveedor();
+            form.ShowDialog();
+            Form_Proveedores_Load(null, null);
+        }
+
+        private void grid_Proveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                textBox_ID.Text = grid_Usuarios[0, e.RowIndex].Value.ToString();
+                textBox_ID.Text = grid_Proveedores[0, e.RowIndex].Value.ToString();
                 button_eliminar.Enabled = true;
                 button_modificar.Enabled = true;
             }

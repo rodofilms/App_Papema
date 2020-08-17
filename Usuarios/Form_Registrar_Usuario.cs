@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace App_Papema
 {
-    public partial class Form_RegistrarUsuario : Form
+    public partial class Form_Registrar_Usuario : Form
     {
         private ErrorProvider validarError = new ErrorProvider();
-        public Form_RegistrarUsuario()
+        public Form_Registrar_Usuario()
         {
             InitializeComponent();
         }

@@ -16,5 +16,15 @@ namespace App_Papema
         {
             InitializeComponent();
         }
+
+        private void button_modificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

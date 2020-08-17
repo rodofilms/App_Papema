@@ -52,7 +52,7 @@ namespace App_Papema
 
         private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_RegistrarUsuario form = new Form_RegistrarUsuario();
+            Form_Registrar_Usuario form = new Form_Registrar_Usuario();
             form.ShowDialog();
         }
 
