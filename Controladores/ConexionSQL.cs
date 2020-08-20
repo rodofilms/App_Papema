@@ -41,8 +41,9 @@ namespace App_Papema
                 while (registro.Read())
                 {
                     //tomar el valor del tipo de acceso para poder acceder al correspondiente
-                    tipo_acceso = registro["Tipo_acceso"].ToString();
+                    tipo_acceso = registro["Tipo_Acceso"].ToString();
                     nombre = registro["Nombre"].ToString();
+                    
                     //comprobar el usuario y contraseña
                     if (registro["Usuario"].ToString() == user && registro["Password"].ToString() == pass)
                     {
@@ -304,7 +305,7 @@ namespace App_Papema
             {
                 this.conexion.Open();
                 // cadena con select para mostrar los registros
-                string cadenaSQL = "select * from Provedores";
+                string cadenaSQL = "select * from Proveedores";
                 da = new SqlDataAdapter(cadenaSQL, this.conexion);
                 da.Fill(ds);
                 dv = new DataView();
@@ -372,7 +373,7 @@ namespace App_Papema
             try
             {
                 this.conexion.Open();
-                string cadena = "delete from Provedores where ID_provedores = @codigo";
+                string cadena = "delete from Proveedores where ID_Proveedor = @codigo";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 comando.Parameters.Add("@codigo", SqlDbType.Int);
                 comando.Parameters["@codigo"].Value = id;
@@ -406,7 +407,7 @@ namespace App_Papema
             try
             {
                 this.conexion.Open();
-                string cadena = "select * from Provedores where ID_provedores = @codigo";
+                string cadena = "select * from Proveedores where ID_Proveedor = @codigo";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
 
                 //definimos el tipo de dato para cada parametro 
@@ -442,12 +443,12 @@ namespace App_Papema
             try
             {
                 this.conexion.Open();
-                string cadena = "update Provedores set " +
+                string cadena = "update Proveedores set " +
                     "Nombre = @nombre, " +
                     "Agencia = @agencia, " +
                     "Telefono = @telefono, " +
                     "Correo = @correo " +
-                    "where ID_provedores = @codigo";
+                    "where ID_Proveedor = @codigo";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
 
                 comando.Parameters.AddWithValue("@nombre", nombre);

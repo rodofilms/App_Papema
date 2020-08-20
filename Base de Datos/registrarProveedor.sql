@@ -8,9 +8,9 @@ create procedure sp_agregar_proveedor
 )
 as
 BEGIN
-    if not exists (select * from Provedores where Nombre = @name)
+    if not exists (select * from Proveedores where Nombre = @name)
     begin
-        insert into Provedores(Nombre,Agencia,Telefono,Correo) values (@name,@agencia,@tel,@email);
+        insert into Proveedores(Nombre,Agencia,Telefono,Correo) values (@name,@agencia,@tel,@email);
 		set @salida = 1;
 	end
     else
