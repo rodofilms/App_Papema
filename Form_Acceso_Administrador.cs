@@ -30,7 +30,7 @@ namespace App_Papema
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Categorias form = new Form_Categorias();
+            Form_Articulos form = new Form_Articulos();
             form.ShowDialog();
         }
 

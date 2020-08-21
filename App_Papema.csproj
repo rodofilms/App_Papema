@@ -55,6 +55,18 @@
     <Compile Include="Acerca.Designer.cs">
       <DependentUpon>Acerca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Articulos\Form_Eliminar_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\Form_Eliminar_Articulo.Designer.cs">
+      <DependentUpon>Form_Eliminar_Articulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos\Form_Registrar_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\Form_Registrar_Articulo.Designer.cs">
+      <DependentUpon>Form_Registrar_Articulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controladores\ConexionSQL.cs" />
     <Compile Include="Form_Acceso_Administrador.cs">
       <SubType>Form</SubType>
@@ -62,11 +74,11 @@
     <Compile Include="Form_Acceso_Administrador.Designer.cs">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Categorias\Form_Categorias.cs">
+    <Compile Include="Articulos\Form_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Categorias\Form_Categorias.Designer.cs">
-      <DependentUpon>Form_Categorias.cs</DependentUpon>
+    <Compile Include="Articulos\Form_Articulos.Designer.cs">
+      <DependentUpon>Form_Articulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores\Form_Eliminar_Proveedor.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="Acerca.resx">
       <DependentUpon>Acerca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\Form_Eliminar_Articulo.resx">
+      <DependentUpon>Form_Eliminar_Articulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\Form_Registrar_Articulo.resx">
+      <DependentUpon>Form_Registrar_Articulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Acceso_Administrador.resx">
       <DependentUpon>Form_Acceso_Administrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Categorias\Form_Categorias.resx">
-      <DependentUpon>Form_Categorias.cs</DependentUpon>
+    <EmbeddedResource Include="Articulos\Form_Articulos.resx">
+      <DependentUpon>Form_Articulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\Form_Eliminar_Proveedor.resx">
       <DependentUpon>Form_Eliminar_Proveedor.cs</DependentUpon>
@@ -185,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="i.ico" />
+    <None Include="Resources\articulos.png" />
     <None Include="Resources\compras.png" />
     <None Include="Resources\Icono-clientes.png" />
     <None Include="Resources\PROVEEDOR.png" />

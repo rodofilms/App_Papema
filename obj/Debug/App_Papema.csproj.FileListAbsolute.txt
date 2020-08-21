@@ -12,10 +12,12 @@ D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Acceso_Administrador.resour
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Eliminar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Modificar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Acerca.resources
-D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Categorias.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Proveedores.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Registrar_Proveedor.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Registrar_Usuario.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Usuarios.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Proveedores.Form_Eliminar_Proveedor.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Proveedores.Form_Modificar_Proveedor.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Registrar_Articulo.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Articulos.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Eliminar_Articulo.resources
