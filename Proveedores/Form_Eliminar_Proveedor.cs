@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace App_Papema.Proveedores
 
         private void button_aceptar_Click(object sender, EventArgs e)
         {
-            ConexionSQL conn = new ConexionSQL();
+            Controlador_Proveedores conn = new Controlador_Proveedores();
             if (conn.borrar_proveedor(id) == 1)
             {
                 Console.WriteLine("Proveedor Eliminado");

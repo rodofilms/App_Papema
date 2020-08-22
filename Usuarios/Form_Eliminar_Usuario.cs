@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,7 @@ namespace App_Papema
 
         private void button_aceptar_Click(object sender, EventArgs e)
         {
-            ConexionSQL conn = new ConexionSQL();
+            Controlador_Usuarios conn = new Controlador_Usuarios();
             if (conn.borrar_usuario(id) == 1)
             {
                 Console.WriteLine("Usuario Eliminado");

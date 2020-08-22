@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace App_Papema
             InitializeComponent();
         }
 
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Usuarios conn = new Controlador_Usuarios();
 
         private void button_modificar_Click(object sender, EventArgs e)
         {

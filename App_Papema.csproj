@@ -74,6 +74,9 @@
       <DependentUpon>Form_Registrar_Articulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Controladores\ConexionSQL.cs" />
+    <Compile Include="Controladores\Controlador_Articulos.cs" />
+    <Compile Include="Controladores\Controlador_Proveedores.cs" />
+    <Compile Include="Controladores\Controlador_Usuarios.cs" />
     <Compile Include="Form_Acceso_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>

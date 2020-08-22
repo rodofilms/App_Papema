@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,7 @@ namespace App_Papema
             {
                 int aux = 0;
                 //si todo es correcto, guardamos los datos
-                ConexionSQL conn = new ConexionSQL();
+                Controlador_Usuarios conn = new Controlador_Usuarios();
                 //vaciar el contenido del formulario en variables
                 try
                 {

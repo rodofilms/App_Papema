@@ -1,4 +1,5 @@
 ﻿using App_Papema.Articulos;
+using App_Papema.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace App_Papema
             InitializeComponent();
         }
 
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Articulos conn = new Controlador_Articulos();
 
         private void button_modificar_Click(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace App_Papema
     public partial class Form_Modificar_Usuario : Form
     {
         private int id;
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Usuarios conn = new Controlador_Usuarios();
         public Form_Modificar_Usuario()
         {
             InitializeComponent();

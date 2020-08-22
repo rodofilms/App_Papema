@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace App_Papema
                 if (ComprobarFormatoEmail(textBox_Correo.Text))
                 {
                     int aux = 0;
-                    ConexionSQL conn = new ConexionSQL();
+                    Controlador_Proveedores conn = new Controlador_Proveedores();
                     try
                     {
                         //ejecutar metodo para agregar datos

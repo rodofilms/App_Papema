@@ -1,4 +1,5 @@
-﻿using App_Papema.Proveedores;
+﻿using App_Papema.Controladores;
+using App_Papema.Proveedores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace App_Papema
             InitializeComponent();
         }
 
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Proveedores conn = new Controlador_Proveedores();
 
         private void button_modificar_Click(object sender, EventArgs e)
         {

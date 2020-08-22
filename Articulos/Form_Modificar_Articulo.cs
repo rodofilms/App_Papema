@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace App_Papema.Articulos
             this.id = int.Parse(id);
         }
 
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Articulos conn = new Controlador_Articulos();
 
         private void button_agregar_Click(object sender, EventArgs e)
         {

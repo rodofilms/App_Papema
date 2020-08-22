@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace App_Papema.Proveedores
     public partial class Form_Modificar_Proveedor : Form
     {
         private int id;
-        private ConexionSQL conn = new ConexionSQL();
+        private Controlador_Proveedores conn = new Controlador_Proveedores();
         public Form_Modificar_Proveedor()
         {
             InitializeComponent();
