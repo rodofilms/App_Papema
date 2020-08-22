@@ -479,7 +479,7 @@ namespace App_Papema
             return b;
         }
 
-        //Categorias
+        //Articulos
         public object llenar_combo_proveedores()
         {
             DataSet ds = new DataSet();
@@ -610,6 +610,84 @@ namespace App_Papema
             }
 
             return aux;
+        }
+
+        public string mostrar_articulo(int id)
+        {
+            string aux = "";
+            try
+            {
+                this.conexion.Open();
+                string cadena = "select * from Articulos where ID_Articulos = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+
+                //definimos el tipo de dato para cada parametro 
+                comando.Parameters.Add("@codigo", SqlDbType.Int);
+                comando.Parameters["@codigo"].Value = id;
+
+                //vaciar el registro en un objeto para poder verlos
+                SqlDataReader registro = comando.ExecuteReader();
+                while (registro.Read())
+                {
+                    aux = registro["Nombre"].ToString() + "," +
+                    registro["Descripcion"].ToString() + "," +
+                    registro["Precio"].ToString() + "," +
+                    registro["ID_Proveedor"].ToString();
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error al mostrar los datos: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return aux;
+        }
+
+        public int modificar_articulo(string nombre, string descripcion, float precio, int id_proveedor,int id)
+        {
+            int b = 0;
+            try
+            {
+                this.conexion.Open();
+                string cadena = "update Articulos set " +
+                    "Nombre = @nombre, " +
+                    "Descripcion = @descripcion, " +
+                    "Precio = @precio, " +
+                    "ID_Proveedor = @id_prov " +
+                    "where ID_Articulos = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@descripcion", descripcion);
+                comando.Parameters.AddWithValue("@precio", precio);
+                comando.Parameters.AddWithValue("@id_prov", id_proveedor);
+                comando.Parameters.AddWithValue("@codigo", id);
+
+                if (comando.ExecuteNonQuery() != 0)
+                {
+                    b = 1;
+                    Console.WriteLine("Los datos se guardaron correctamente");
+                }
+                else
+                {
+                    Console.WriteLine("Los datos no se guardaron");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error con el Update: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
+
+            return b;
         }
     }
 }

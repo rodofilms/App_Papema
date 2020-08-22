@@ -21,3 +21,4 @@ D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Proveedores.Form_Modificar_Prove
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Registrar_Articulo.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Articulos.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Eliminar_Articulo.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Modificar_Articulo.resources

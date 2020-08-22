@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace App_Papema.Articulos
 {
-    public partial class Form_Registrar_Articulo : Form
+    public partial class Form_Modificar_Articulo : Form
     {
-        public Form_Registrar_Articulo()
+        private int id;
+        public Form_Modificar_Articulo(string id)
         {
             InitializeComponent();
+            this.id = int.Parse(id);
         }
 
         private ConexionSQL conn = new ConexionSQL();
@@ -27,34 +29,16 @@ namespace App_Papema.Articulos
             }
             else
             {
-                int aux = 0;
-
-                //Obtener ID del comboBox proveedores
                 int id_proveedor = int.Parse(comboBox_Proveedor.SelectedValue.ToString());
-                try
+                if (conn.modificar_articulo(textBox_Nombre.Text,textBox_Descripcion.Text,float.Parse(textBox_Precio.Text),id_proveedor,id) == 1)
                 {
-                    //ejecutar metodo para agregar datos
-                    aux = conn.agregar_articulo(textBox_Nombre.Text,textBox_Descripcion.Text,float.Parse(textBox_Precio.Text),id_proveedor);
-
-                    if (aux == 1)
-                    {
-                        MessageBox.Show("EL Articulo se agrego correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else if (aux == 2)
-                    {
-                        MessageBox.Show("El Articulo no se puede repetir", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ha Ocurrido un error", "Peligro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception)
+                    MessageBox.Show("los datos se modificarion correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                } 
+                else
                 {
-                    MessageBox.Show("Verifique todos los campos", "Peligro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se ejecuto el metodo para actualizar !", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
         }
 
@@ -63,12 +47,20 @@ namespace App_Papema.Articulos
             this.Close();
         }
 
-        private void Form_Registrar_Articulo_Load(object sender, EventArgs e)
+        private void Form_Modificar_Articulo_Load(object sender, EventArgs e)
         {
             DataSet ds = (DataSet)conn.llenar_combo_proveedores();
             comboBox_Proveedor.DataSource = ds.Tables[0];
             comboBox_Proveedor.ValueMember = "ID_Proveedor";
             comboBox_Proveedor.DisplayMember = "Nombre";
+            // llenar todos los campos
+            char delimitador = ',';
+            string[] aux = conn.mostrar_articulo(id).Split(delimitador);
+
+            textBox_Nombre.Text = aux[0];
+            textBox_Descripcion.Text = aux[1];
+            textBox_Precio.Text = aux[2];
+            //textBox_Correo.Text = aux[3];
         }
 
         private void textBox_Precio_KeyPress(object sender, KeyPressEventArgs e)

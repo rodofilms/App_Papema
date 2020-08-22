@@ -25,15 +25,23 @@ namespace App_Papema.Proveedores
         }
         private void button_agregar_Click(object sender, EventArgs e)
         {
-            if (conn.modificar_proveedor(textBox_Nombre.Text, textBox_Agencia.Text, textBox_Telefono.Text, textBox_Correo.Text, id) == 1)
+            if (textBox_Nombre.Text.Equals("") || textBox_Agencia.Text.Equals("") || textBox_Telefono.Text.Equals("") || textBox_Correo.Text.Equals(""))
             {
-                MessageBox.Show("los datos se modificarion correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
+                MessageBox.Show("Faltan campos por llenar, favor de verificar", "Advertencia !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } 
             else
             {
-                MessageBox.Show("Ha Ocurrido un error", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (conn.modificar_proveedor(textBox_Nombre.Text, textBox_Agencia.Text, textBox_Telefono.Text, textBox_Correo.Text, id) == 1)
+                {
+                    MessageBox.Show("los datos se modificarion correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se ejecuto el metodo para actualizar !", "Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)

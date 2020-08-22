@@ -22,14 +22,12 @@ namespace App_Papema
 
         private void button_modificar_Click(object sender, EventArgs e)
         {
-            /*
             Form_Modificar_Articulo form = new Form_Modificar_Articulo(textBox_ID.Text);
             form.ShowDialog();
             textBox_ID.Text = "";
             button_modificar.Enabled = false;
             button_eliminar.Enabled = false;
             Form_Articulos_Load(null, null);
-            */
         }
 
         private void button_eliminar_Click(object sender, EventArgs e)
