@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Controladores;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +12,7 @@ namespace App_Papema
     class ConexionSQL
     {
         protected SqlConnection conexion;
-
+        protected int ID_Session;
         public ConexionSQL()
         {
             conexion = new SqlConnection("server=G77588; database=papema; integrated security = true");
@@ -26,7 +27,7 @@ namespace App_Papema
             try
             {
                 this.conexion.Open();
-                string cadena = "select Usuario, Password, Tipo_Acceso, Nombre from Usuarios " +
+                string cadena = "select ID_Usuario, Usuario, Password, Tipo_Acceso, Nombre from Usuarios " +
                     "where Usuario = @user and Password = @pass";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
 
@@ -41,6 +42,7 @@ namespace App_Papema
                 while (registro.Read())
                 {
                     //tomar el valor del tipo de acceso para poder acceder al correspondiente
+                    Session_ID.Set_ID_Session(int.Parse(registro["ID_Usuario"].ToString()));
                     tipo_acceso = registro["Tipo_Acceso"].ToString();
                     nombre = registro["Nombre"].ToString();
                     

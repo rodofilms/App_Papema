@@ -110,32 +110,40 @@ namespace App_Papema.Controladores
         public int borrar_usuario(int id)
         {
             int aux = 0;
-            try
-            {
-                this.conexion.Open();
-                string cadena = "delete from Usuarios where ID_Usuario = @codigo";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
-                comando.Parameters.Add("@codigo", SqlDbType.Int);
-                comando.Parameters["@codigo"].Value = id;
 
-                if (comando.ExecuteNonQuery() == 1)
-                {
-                    aux = 1;
-                }
-                else
-                {
-                    Console.WriteLine("No se ha podido eliminar el registro");
-                    aux = 0;
-                }
-            }
-            catch (Exception)
+            if (id == Session_ID.Get_ID_Session())
             {
-                Console.WriteLine("Error al ejecutar las sentecias SQL en el metodo borrar_usuario");
+                return 0;
             }
-            finally
+            else
             {
-                this.conexion.Close();
-                Console.WriteLine("Se cerro la conexion");
+                try
+                {
+                    this.conexion.Open();
+                    string cadena = "delete from Usuarios where ID_Usuario = @codigo";
+                    SqlCommand comando = new SqlCommand(cadena, conexion);
+                    comando.Parameters.Add("@codigo", SqlDbType.Int);
+                    comando.Parameters["@codigo"].Value = id;
+
+                    if (comando.ExecuteNonQuery() == 1)
+                    {
+                        aux = 1;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se ha podido eliminar el registro");
+                        aux = 0;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error al ejecutar las sentecias SQL en el metodo borrar_usuario");
+                }
+                finally
+                {
+                    this.conexion.Close();
+                    Console.WriteLine("Se cerro la conexion");
+                }
             }
 
             return aux;

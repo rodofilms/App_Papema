@@ -39,8 +39,8 @@ namespace App_Papema
             } 
             else
             {
-                MessageBox.Show("Error al eliminar el usuario, revise que no existan conexiones " +
-                    "con el mismo antes de borrar el registro", "Avertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No puede eliminar el usuario con el que este accediendo, " +
+                    "si desea eliminar este registro pidaselo a un Administrador", "Avertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

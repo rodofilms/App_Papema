@@ -77,6 +77,7 @@
     <Compile Include="Controladores\Controlador_Articulos.cs" />
     <Compile Include="Controladores\Controlador_Proveedores.cs" />
     <Compile Include="Controladores\Controlador_Usuarios.cs" />
+    <Compile Include="Controladores\Session_ID.cs" />
     <Compile Include="Form_Acceso_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
