@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Papema.Punto_de_Venta;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,7 +43,8 @@ namespace App_Papema
 
         private void puntoDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form_Punto_De_Venta form = new Form_Punto_De_Venta();
+            form.ShowDialog();
         }
     }
 }

@@ -77,6 +77,7 @@
     <Compile Include="Controladores\Controlador_Articulos.cs" />
     <Compile Include="Controladores\Controlador_Proveedores.cs" />
     <Compile Include="Controladores\Controlador_Usuarios.cs" />
+    <Compile Include="Controladores\Controlador_Ventas.cs" />
     <Compile Include="Controladores\Session_ID.cs" />
     <Compile Include="Form_Acceso_Administrador.cs">
       <SubType>Form</SubType>
@@ -90,6 +91,7 @@
     <Compile Include="Articulos\Form_Articulos.Designer.cs">
       <DependentUpon>Form_Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Microsoft\VisualBasic\Interaction.cs" />
     <Compile Include="Proveedores\Form_Eliminar_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +103,12 @@
     </Compile>
     <Compile Include="Proveedores\Form_Modificar_Proveedor.Designer.cs">
       <DependentUpon>Form_Modificar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Punto de Venta\Form_Punto_De_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Punto de Venta\Form_Punto_De_Venta.Designer.cs">
+      <DependentUpon>Form_Punto_De_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\Form_Eliminar_Usuario.cs">
       <SubType>Form</SubType>
@@ -170,6 +178,9 @@
     <EmbeddedResource Include="Proveedores\Form_Modificar_Proveedor.resx">
       <DependentUpon>Form_Modificar_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Punto de Venta\Form_Punto_De_Venta.resx">
+      <DependentUpon>Form_Punto_De_Venta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Form_Eliminar_Usuario.resx">
       <DependentUpon>Form_Eliminar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,8 +238,6 @@
     <None Include="Resources\Admin.png" />
     <None Include="Resources\Clientes.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Punto de Venta\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,3 +22,4 @@ D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Registrar_Articul
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Form_Articulos.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Eliminar_Articulo.resources
 D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Articulos.Form_Modificar_Articulo.resources
+D:\Proyectos\c#\App_Papema\obj\Debug\App_Papema.Punto_de_Venta.Form_Punto_De_Venta.resources
