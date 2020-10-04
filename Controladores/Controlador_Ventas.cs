@@ -71,5 +71,48 @@ namespace App_Papema.Controladores
             
             return id_venta;
         }
+        public int actulizar_venta()
+        {
+            return 0;
+        }
+
+        public int eliminar_venta(int id)
+        {
+            int aux = 0;
+            try
+            {
+                this.conexion.Open();
+                string cadena = "delete from Ventas where ID_Venta = @codigo";
+                SqlCommand comando = new SqlCommand(cadena, conexion);
+                comando.Parameters.Add("@codigo", SqlDbType.Int);
+                comando.Parameters["@codigo"].Value = id;
+
+                if (comando.ExecuteNonQuery() == 1)
+                {
+                    aux = 1;
+                }
+                else
+                {
+                    Console.WriteLine("No se ha podido eliminar el registro");
+                    aux = 0;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error al ejecutar las sentecias SQL en el metodo eliminar venta");
+            }
+            finally
+            {
+                this.conexion.Close();
+                Console.WriteLine("Se cerro la conexion");
+            }
+
+            return aux;
+        }
+
+        public int terminar_venta()
+        {
+            return 0;
+        }
     }
 }

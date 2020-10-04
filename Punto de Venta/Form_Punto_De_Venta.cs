@@ -27,8 +27,16 @@ namespace App_Papema.Punto_de_Venta
 
         private void button_agregar_Click(object sender, EventArgs e)
         {
-
-            grid_canasta.Rows.Add(id_articulo, nombre, precio, cantidad, precio*cantidad);
+            if (textBox_Cantidad.Text.Equals(""))
+            {
+                MessageBox.Show("Favor de Colocar la cantidad", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                cantidad = int.Parse(textBox_Cantidad.Text);
+                grid_canasta.Rows.Add(id_articulo, nombre, precio, cantidad, precio * cantidad);
+            }
+            textBox_Cantidad.Text = "";
         }
 
         private void verArticulosToolStripMenuItem_ver_articulos_Click(object sender, EventArgs e)
@@ -38,12 +46,22 @@ namespace App_Papema.Punto_de_Venta
 
         private void button_finalizar_compra_Click(object sender, EventArgs e)
         {
+            //agregar los datos de articulos venta en la base de datos
+            //actualizar la tabla de ventas con el total de la venta
 
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)
         {
-
+            //limpiar datagridview
+            //ejecutar un scrip sql para eliminar la venta generada
+            //limpiar los capos que se llenaron anteriormente y deshabilitar los buttons
+            conn.eliminar_venta(int.Parse(textBox_ID_Venta.Text));
+            grid_canasta.Rows.Clear();
+            textBox_ID_Venta.Text = "";
+            button_agregar.Enabled = false;
+            button_cancelar.Enabled = false;
+            button_finalizar_compra.Enabled = false;
         }
 
         private void Form_Punto_De_Venta_Load(object sender, EventArgs e)
@@ -79,6 +97,7 @@ namespace App_Papema.Punto_de_Venta
             {   
                 button_agregar.Enabled = true;
                 button_finalizar_compra.Enabled = true;
+                button_cancelar.Enabled = true;
                 MessageBox.Show("Venta Iniciada", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox_ID_Venta.Text = ""+id_venta;
             }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grid_canasta = new System.Windows.Forms.DataGridView();
             this.grid_articulos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -45,6 +45,8 @@
             this.button_cancelar = new System.Windows.Forms.Button();
             this.button_iniciar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox_Cantidad = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid_canasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_articulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -54,8 +56,8 @@
             // 
             this.grid_canasta.AllowUserToAddRows = false;
             this.grid_canasta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            this.grid_canasta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Aqua;
+            this.grid_canasta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.grid_canasta.BackgroundColor = System.Drawing.Color.White;
             this.grid_canasta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_canasta.Location = new System.Drawing.Point(682, 54);
@@ -72,8 +74,8 @@
             // 
             this.grid_articulos.AllowUserToAddRows = false;
             this.grid_articulos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
-            this.grid_articulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Aqua;
+            this.grid_articulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grid_articulos.BackgroundColor = System.Drawing.Color.White;
             this.grid_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_articulos.Location = new System.Drawing.Point(23, 106);
@@ -129,7 +131,7 @@
             // 
             this.button_agregar.Enabled = false;
             this.button_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_agregar.Location = new System.Drawing.Point(490, 368);
+            this.button_agregar.Location = new System.Drawing.Point(682, 562);
             this.button_agregar.Name = "button_agregar";
             this.button_agregar.Size = new System.Drawing.Size(144, 80);
             this.button_agregar.TabIndex = 5;
@@ -192,6 +194,7 @@
             // 
             // button_cancelar
             // 
+            this.button_cancelar.Enabled = false;
             this.button_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_cancelar.Location = new System.Drawing.Point(366, 557);
             this.button_cancelar.Name = "button_cancelar";
@@ -204,9 +207,9 @@
             // button_iniciar
             // 
             this.button_iniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_iniciar.Location = new System.Drawing.Point(298, 368);
+            this.button_iniciar.Location = new System.Drawing.Point(209, 368);
             this.button_iniciar.Name = "button_iniciar";
-            this.button_iniciar.Size = new System.Drawing.Size(174, 80);
+            this.button_iniciar.Size = new System.Drawing.Size(136, 80);
             this.button_iniciar.TabIndex = 12;
             this.button_iniciar.Text = "Iniciar Venta";
             this.button_iniciar.UseVisualStyleBackColor = true;
@@ -221,12 +224,34 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(171, 34);
             this.dateTimePicker1.TabIndex = 13;
             // 
+            // textBox_Cantidad
+            // 
+            this.textBox_Cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Cantidad.Location = new System.Drawing.Point(498, 389);
+            this.textBox_Cantidad.Multiline = true;
+            this.textBox_Cantidad.Name = "textBox_Cantidad";
+            this.textBox_Cantidad.Size = new System.Drawing.Size(136, 47);
+            this.textBox_Cantidad.TabIndex = 14;
+            this.textBox_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(345, 395);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 32);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Cantidad:";
+            // 
             // Form_Punto_De_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1418, 690);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox_Cantidad);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button_iniciar);
             this.Controls.Add(this.button_cancelar);
@@ -275,5 +300,7 @@
         private System.Windows.Forms.Button button_cancelar;
         private System.Windows.Forms.Button button_iniciar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox_Cantidad;
+        private System.Windows.Forms.Label label4;
     }
 }
