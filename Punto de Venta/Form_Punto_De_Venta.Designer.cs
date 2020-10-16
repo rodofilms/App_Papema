@@ -163,18 +163,18 @@
             // textBox_total
             // 
             this.textBox_total.Enabled = false;
-            this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_total.Location = new System.Drawing.Point(1045, 557);
-            this.textBox_total.Multiline = true;
+            this.textBox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_total.Location = new System.Drawing.Point(1018, 571);
             this.textBox_total.Name = "textBox_total";
-            this.textBox_total.Size = new System.Drawing.Size(346, 89);
+            this.textBox_total.Size = new System.Drawing.Size(373, 64);
             this.textBox_total.TabIndex = 8;
+            this.textBox_total.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(865, 568);
+            this.label3.Location = new System.Drawing.Point(834, 568);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 69);
             this.label3.TabIndex = 9;

@@ -111,8 +111,29 @@ namespace App_Papema.Controladores
         }
 
         public int terminar_venta()
-        {
+        { /*
+            try
+            {
+                this.conexion.Open();
+                SqlCommand comando = new SqlCommand("sp_agregar_venta", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@fecha", SqlDbType.Date)).Value = fecha;
+                comando.Parameters.AddWithValue("@total", total);
+                comando.Parameters.Add("@id_venta", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                comando.ExecuteNonQuery();
+                id_venta = int.Parse(comando.Parameters["@id_venta"].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error al iniciar la venta: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
             return 0;
+            */
         }
     }
 }

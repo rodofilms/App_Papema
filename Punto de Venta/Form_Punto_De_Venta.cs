@@ -35,8 +35,21 @@ namespace App_Papema.Punto_de_Venta
             {
                 cantidad = int.Parse(textBox_Cantidad.Text);
                 grid_canasta.Rows.Add(id_articulo, nombre, precio, cantidad, precio * cantidad);
+                //calcuclar total
+                textBox_Cantidad.Text = "";
+                textBox_total.Text = "" + suma();
             }
-            textBox_Cantidad.Text = "";
+            
+        }
+
+        private float suma()
+        {
+            float total = 0;
+            for (int i = 0; i < grid_canasta.Rows.Count; i++)
+            {
+                total = total + float.Parse(grid_canasta[4,i].Value.ToString()); 
+            }
+            return total;
         }
 
         private void verArticulosToolStripMenuItem_ver_articulos_Click(object sender, EventArgs e)
@@ -48,7 +61,7 @@ namespace App_Papema.Punto_de_Venta
         {
             //agregar los datos de articulos venta en la base de datos
             //actualizar la tabla de ventas con el total de la venta
-
+            
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)
