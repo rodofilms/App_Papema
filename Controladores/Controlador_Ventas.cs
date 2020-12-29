@@ -71,9 +71,27 @@ namespace App_Papema.Controladores
             
             return id_venta;
         }
-        public int actulizar_venta()
+        public void actulizar_venta(int id,float total)
         {
-            return 0;
+            try
+            {
+                this.conexion.Open();
+                SqlCommand comando = new SqlCommand("sp_actualizar_venta", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = id;
+                comando.Parameters.Add(new SqlParameter("@total", SqlDbType.Int)).Value = total;
+
+                comando.ExecuteNonQuery();
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error al actualizar la venta: " + ex.Message);
+            }
+            finally
+            {
+                this.conexion.Close();
+            }
         }
 
         public int eliminar_venta(int id)
@@ -110,30 +128,28 @@ namespace App_Papema.Controladores
             return aux;
         }
 
-        public int terminar_venta()
-        { /*
+        public void terminar_venta(int id_articulo, int id_venta)
+        { 
             try
             {
                 this.conexion.Open();
-                SqlCommand comando = new SqlCommand("sp_agregar_venta", conexion);
+                SqlCommand comando = new SqlCommand("sp_agregar_articulos_venta", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add(new SqlParameter("@fecha", SqlDbType.Date)).Value = fecha;
-                comando.Parameters.AddWithValue("@total", total);
-                comando.Parameters.Add("@id_venta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                comando.Parameters.Add(new SqlParameter("@id_articulo", SqlDbType.Int)).Value = id_articulo;
+                comando.Parameters.Add(new SqlParameter("@id_venta", SqlDbType.Int)).Value = id_venta;
 
                 comando.ExecuteNonQuery();
-                id_venta = int.Parse(comando.Parameters["@id_venta"].Value.ToString());
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ha ocurrido un error al iniciar la venta: " + ex.Message);
+                Console.WriteLine("Ha ocurrido un error al llenar los articulo_venta: " + ex.Message);
             }
             finally
             {
                 this.conexion.Close();
-            }
-            return 0;
-            */
+            } 
         }
+
     }
 }

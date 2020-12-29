@@ -61,7 +61,21 @@ namespace App_Papema.Punto_de_Venta
         {
             //agregar los datos de articulos venta en la base de datos
             //actualizar la tabla de ventas con el total de la venta
-            
+            for (int i = 0; i < grid_canasta.Rows.Count; i++)
+            {
+                conn.terminar_venta(int.Parse(grid_canasta[0,i].Value.ToString()), int.Parse(textBox_ID_Venta.Text));
+                //Console.WriteLine(grid_canasta[1, i].Value.ToString() + " --- " + textBox_ID_Venta.Text);
+            }
+            conn.actulizar_venta(int.Parse(textBox_ID_Venta.Text),float.Parse(textBox_total.Text));
+
+            textBox_ID_Venta.Text = "";
+            textBox_Cantidad.Text = "";
+            textBox_total.Text = "0";
+            grid_canasta.Rows.Clear();
+            button_cancelar.Enabled = false;
+            button_finalizar_compra.Enabled = false;
+            button_agregar.Enabled = false;
+            MessageBox.Show("Compra terminada");
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)
